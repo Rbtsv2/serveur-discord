@@ -1,6 +1,8 @@
 <div align="center">
-    <img src="https://play-lh.googleusercontent.com/fbrWR4LbtB_1Ulgz3_rw8bY3tx_zPU7A9ZOB5WYG_QmqOUUjA6JEzE_20GA4YBDWMx4=w240-h480">
+  <img src="./img/discord.png" alt="Discord">
 </div>
+
+
 # METEO DISCORD
 
 Meteo Discord est un BOT NODE qui fournit des informations météorologiques essentielles pour les aéroports du monde entier, y compris les rapports METAR et TAF. Ce module est parfait pour les applications qui nécessitent un accès en temps réel aux conditions météorologiques des aéroports pour les pilotes, les compagnies aériennes, ou les enthousiastes de l'aviation.
