@@ -1,0 +1,30 @@
+# Fichiers de configuration qui contiennent des secrets ou des clés API
+config.json
+.env
+
+# Dossiers node_modules où les dépendances sont stockées
+node_modules/
+
+# Fichiers de journalisation
+*.log
+logs/
+
+# Système de fichiers et dossiers de l'éditeur
+.DS_Store
+.vscode/
+
+# Fichiers temporaires
+tmp/
+temp/
+
+# Fichiers de cache du système d'exploitation ou de l'éditeur
+Thumbs.db
+*.db
+*.cache
+
+# Fichiers de build et de distribution
+dist/
+build/
+
+# Dossier de sortie de la documentation (si générée localement)
+docs/_build/
