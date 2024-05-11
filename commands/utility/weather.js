@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const API = require('../../api/api');
 
 module.exports = {
@@ -19,19 +19,19 @@ module.exports = {
         try {
             const weatherData = await api.getMetarData(airportCode);
             console.log('Weather data received:', weatherData); // Affiche les données météorologiques reçues
-            // const embed = new MessageEmbed()
-            //     .setColor('#0099ff')
-            //     .setTitle(`Weather Information for ${airportCode}`)
-            //     .setDescription('Current METAR data')
-            //     .addFields(
-            //         { name: 'Temperature', value: `${weatherData.temperature}°C`, inline: true },
-            //         { name: 'Wind Speed', value: `${weatherData.wind_speed} knots`, inline: true },
-            //         { name: 'Visibility', value: `${weatherData.visibility} meters`, inline: true }
-            //     )
-            //     .setTimestamp()
-            //     .setFooter({ text: 'Weather data provided by AviationWeather.gov' });
-            // console.log('Embed prepared:', embed); // Affiche les détails de l'embed préparé
-            // await interaction.editReply({ embeds: [embed] });
+            const embed = new EmbedBuilder()
+                .setColor('#0099ff')
+                .setTitle(`Weather Information for ${airportCode}`)
+                .setDescription('Current METAR data')
+                .addFields(
+                    { name: 'Temperature', value: `${weatherData.temp}°C`, inline: true },
+                    { name: 'Vitesse du vent', value: `${weatherData.wspd} knots`, inline: true },
+                    { name: 'Visibility', value: `${weatherData.visib} miles`, inline: true }
+                )
+                .setTimestamp()
+                .setFooter({ text: 'Weather data provided by AviationWeather.gov' });
+            console.log('Embed prepared:', embed); // Affiche les détails de l'embed préparé
+            await interaction.editReply({ embeds: [embed] });
         } catch (error) {
             console.error('Error fetching weather data:', error);
             await interaction.editReply('Error fetching weather data: ' + error.message);

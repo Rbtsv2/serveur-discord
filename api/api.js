@@ -27,15 +27,13 @@ class API {
     async getMetarData(airportCode) {
         try {
             const response = await this.requestGet('/data/metar', { ids: airportCode, format: 'json' });
-            console.log(response)
-
-            return response[0];
+            console.log(response[0])
+            return response[0]; 
         } catch (error) {
             console.error('API Error:', error);
             throw new Error('Failed to fetch data from API');
         }
     }
-
 
     async getAirportData(airportCode) {
         const data = await this.requestGet('/data/airport', { ids: airportCode, format: 'json' });
