@@ -1,7 +1,7 @@
 # METEO DISCORD
 
 <p align="center">
-  <img src="https://github.com/Rbtsv2/meteo-discord/blob/master/img/discord.png?raw=true" alt="Discord">
+    <img src="https://github.com/Rbtsv2/meteo-discord/blob/master/img/discord.png?raw=true" alt="Discord">
 </p>
 
 
