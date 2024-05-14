@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const API = require('../../api/api');
+const { translateCloudCover, getOrdinalSuffix } = require('../../utils/metarUtils');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -19,14 +20,30 @@ module.exports = {
         try {
             const weatherData = await api.getMetarData(airportCode);
             console.log('Weather data received:', weatherData); // Affiche les données météorologiques reçues
+            
+            const cloudsDescription = weatherData.clouds.map((cloud, index) => {
+                const cover = translateCloudCover(cloud.cover);
+                const base = cloud.base ? `${cloud.base} feet` : 'Unknown base';
+                const layer = getOrdinalSuffix(index + 1);
+                return `${layer} couche nuageuse ${cover} à ${base}`;
+            }).join('\n');   
+            
+            
             const embed = new EmbedBuilder()
                 .setColor('#0099ff')
-                .setTitle(`Weather Information for ${airportCode}`)
-                .setDescription('Current METAR data')
+                .setTitle(`Weather Information for ${weatherData.name}`)
+                .setDescription(`Données METAR actuelles ${airportCode}`)
                 .addFields(
-                    { name: 'Temperature', value: `${weatherData.temp}°C`, inline: true },
-                    { name: 'Vitesse du vent', value: `${weatherData.wspd} knots`, inline: true },
-                    { name: 'Visibility', value: `${weatherData.visib} miles`, inline: true }
+
+                    { name: 'METAR', value: `\`${weatherData.rawOb !== null ? weatherData.rawOb : 'N/A'}\``, inline: false },
+                    { name: 'Température', value: `${weatherData.temp !== null ? weatherData.temp.toFixed(1) : 'N/A'}°C`, inline: true },
+                    { name: 'Vitesse du vent', value: `${weatherData.wspd !== null ? weatherData.wspd : 'N/A'} knots`, inline: true },
+                    { name: 'Direction du vent', value: `${weatherData.wdir !== null ? weatherData.wdir : 'N/A'}°`, inline: true },
+                    { name: 'Visibilité', value: `${weatherData.visib !== null ? weatherData.visib : 'N/A'} miles`, inline: true },
+                    { name: 'Point de rosée', value: `${weatherData.dewp !== null ? weatherData.dewp.toFixed(1) : 'N/A'}°C`, inline: true },
+                    { name: 'Pression au niveau de la mer', value: `${weatherData.slp !== null ? weatherData.slp.toFixed(1) : 'N/A'} hPa`, inline: true },
+                    { name: 'Pression (Altimètre)', value: `${weatherData.altim !== null ? weatherData.altim.toFixed(2) : 'N/A'} hPa`, inline: true },
+                    { name: 'Nuages', value: cloudsDescription || 'N/A', inline: false }
                 )
                 .setTimestamp()
                 .setFooter({ text: 'Weather data provided by AviationWeather.gov' });
