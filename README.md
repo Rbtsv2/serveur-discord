@@ -43,6 +43,12 @@ node .
 
 Pour obtenir les informations météorologiques de l'aéroport de New York - John-F.-Kennedy (OACI : KJFK), utilisez le dans discord :
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Rbtsv2/meteo-discord/master/img/weather_discord.png" alt="Discord">
+</p>
+
+
+
 ```bash
 
 /weather option KJFK
