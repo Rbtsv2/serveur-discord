@@ -5,66 +5,23 @@
 </p>
 
 
+BOT NODE
 
-Meteo Discord est un BOT NODE qui fournit des informations météorologiques essentielles pour les aéroports du monde entier, y compris les rapports METAR et TAF. Ce module est parfait pour les applications qui nécessitent un accès en temps réel aux conditions météorologiques des aéroports pour les pilotes, les compagnies aériennes, ou les enthousiastes de l'aviation.
+Dans le menu de gauche, cliquez sur OAuth2 > URL Generator.
 
-## Caractéristiques
+Sélectionnez les Scopes :
 
-- **Récupération des METARs** : Obtenez des rapports météorologiques de surface détaillés pour tout aéroport disposant d'un code ICAO.
-- **Interprétation des TAFs** : Prévisions météorologiques sur l'aérodrome pour aider à la planification des vols.
-- **Facile à intégrer** : Conçu pour être facilement intégré dans des applications Python existantes.
-- **Support multiplateforme** : Compatible avec toutes les plateformes supportées par Python.
-
-## Installation
-
-Vous pouvez installer AeroCast directement via pip depuis PyPI :
-
-## Installation
-
-1. Clonez le référentiel du projet :
-
-```shell
-mkdir meteo-discord
-cd meteo-discord
-git clone https://github.com/Rbtsv2/meteo-discord.git .
-```
-2. Lancer le bot 
-
-```shell
-npm install
-```
-
-```shell
-node deploy-commands.js
-node . 
-```
-
-## Exemple d'utilisation
-
-Pour obtenir les informations météorologiques de l'aéroport de New York - John-F.-Kennedy (OACI : KJFK), utilisez le dans discord :
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Rbtsv2/meteo-discord/master/img/weather_discord.png" alt="Discord">
-</p>
+bot : Permet d’ajouter le bot au serveur.
+applications.commands : Permet au bot de créer des commandes slash.
 
 
-
-```bash
-
-/weather option KJFK
-
-```
-
-## Contribuer
-
-Les contributions sont toujours les bienvenues ! Si vous souhaitez contribuer, veuillez forker le dépôt et proposer une pull request.
-
-
-
-## Licence
-
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## Contact
-
-Projet GitHub : https://github.com/Rbtsv2/AeroCast
+Send Messages : Permet au bot d'envoyer des messages dans les canaux, essentiel pour répondre aux commandes et interagir avec les membres.
+Read Message History : Autorise le bot à lire l’historique des messages dans un canal, utile pour répondre aux commandes dans des discussions en cours.
+View Channels : Permet au bot de voir les canaux où il est invité.
+Manage Messages : Utile si vous voulez que le bot puisse supprimer des messages pour la modération.
+Embed Links : Permet d’envoyer des liens intégrés (liens cliquables avec un aperçu), souvent utilisé pour enrichir les réponses.
+Use Slash Commands : Indispensable pour que le bot puisse exécuter les commandes slash (/command).
+Add Reactions : Utile si le bot doit réagir à des messages avec des émojis.
+View Audit Log : Si vous souhaitez que le bot puisse voir qui a invité de nouveaux membres.
+Manage Roles : Si le bot doit gérer les rôles (par exemple, attribuer des rôles de jeu ou des rôles basés sur l'activité).
+Manage Nicknames : Permet au bot de changer les pseudonymes, si cela fait partie de ses fonctionnalités.
