@@ -1,11 +1,9 @@
-# METEO DISCORD
+# BOT DISCORD
 
 <p align="center">
     <img src="https://github.com/Rbtsv2/meteo-discord/blob/master/img/discord.png?raw=true" alt="Discord">
 </p>
 
-
-BOT NODE
 
 Dans le menu de gauche, cliquez sur OAuth2 > URL Generator.
 
