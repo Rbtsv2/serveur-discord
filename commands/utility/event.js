@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 // Liste des IDs des utilisateurs autorisés à exécuter cette commande
-const ALLOWED_USER_IDS = ['373861711368814596']; // Remplacez par les IDs appropriés
+const ALLOWED_USER_IDS = ['373861711368814596', '284351967688654850']; // Remplacez par les IDs appropriés
 
 module.exports = {
 	data: new SlashCommandBuilder()
