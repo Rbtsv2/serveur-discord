@@ -1,6 +1,7 @@
 const { token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
+const { lancerCronRappels } = require('./tasks/eventReminder');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 
 // Création d'une nouvelle instance du client Discord avec les intents spécifiés
@@ -77,6 +78,7 @@ client.on(Events.InteractionCreate, async interaction => {
 // Événement prêt
 client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+	lancerCronRappels(client);  // Lance le cron pour les rappels d'événements
 });
 
 // Connexion du bot avec le token

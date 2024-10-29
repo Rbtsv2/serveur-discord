@@ -1,5 +1,6 @@
 # Fichiers de configuration qui contiennent des secrets ou des clés API
 config.json
+roles.json
 .env
 
 # Dossiers node_modules où les dépendances sont stockées

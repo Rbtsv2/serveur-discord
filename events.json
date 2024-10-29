@@ -1,0 +1,41 @@
+{
+  "events": {
+    "event_1234567890": {
+      "id": "event_1234567890",
+      "name": "Session de jeu",
+      "date": "2024-12-12T20:00:00.000Z",
+      "description": "Rejoignez-nous pour jouer ensemble !",
+      "participants": [
+        "user_1",
+        "user_2",
+        "user_3"
+      ]
+    },
+    "event_0987654321": {
+      "id": "event_0987654321",
+      "name": "Autre événement",
+      "date": "2025-01-15T18:00:00.000Z",
+      "description": "Un autre événement excitant.",
+      "participants": [
+        "user_4",
+        "user_5"
+      ]
+    },
+    "event_1730220287100": {
+      "id": "event_1730220287100",
+      "name": "Session de jeu",
+      "date": "2024-10-29T19:00:00.000Z",
+      "description": "Rejoignez-nous pour une session de jeu !",
+      "participants": []
+    },
+    "event_1730220996139": {
+      "id": "event_1730220996139",
+      "name": "Session de jeu",
+      "date": "2024-10-29T19:00:00.000Z",
+      "description": "Rejoignez-nous pour une session de jeu !",
+      "participants": [
+        "373861711368814596"
+      ]
+    }
+  }
+}
